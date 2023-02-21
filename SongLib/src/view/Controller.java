@@ -278,6 +278,12 @@ public class Controller implements Initializable {
     
     private void initalizeEdit() {
     	
+    	   if (songList1.isEmpty()) {
+    	        Alert alert = new Alert(Alert.AlertType.ERROR, "The song list is empty. Please add songs before editing.", ButtonType.OK);
+    	        alert.showAndWait();
+    	        return;
+    	    }
+    	
     	Button editFinal = new Button("Finalize Edit");
     	Button editCancel = new Button("Cancel Edit");
     	
@@ -324,7 +330,7 @@ public class Controller implements Initializable {
     	
     	//Save the old title & artist names
     	String oldTitle = editSong.getTitle();
-    	String oldArtist = editSong.getArtist();
+    	//String oldArtist = editSong.getArtist();
     	
     	
     	// Grabs the edited text fields 
@@ -389,7 +395,7 @@ public class Controller implements Initializable {
         
     	
         	 ////removing the song
-        	 int songID = songList.getSelectionModel().getSelectedIndex();
+        	 //int songID = songList.getSelectionModel().getSelectedIndex();
         	 songList.getItems().remove(editID);
         	 songList1.remove(editID);
     	
