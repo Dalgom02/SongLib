@@ -263,6 +263,13 @@ public class Controller implements Initializable {
             if(songList.getSelectionModel().isEmpty()) {
                 songList.getSelectionModel().select(songID - 1);
             }
+            if(songList.getItems().isEmpty()) {
+                currentTitleLabel.setText(null);
+                currentArtistLabel.setText(null);
+                currentAlbumLabel.setText(null);
+                currentYearLabel.setText(null);
+                }
+             
         } else {
             return;
         }
