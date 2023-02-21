@@ -242,6 +242,11 @@ public class Controller implements Initializable {
     
         
     private void deleteSong() {
+    	 if (songList1.isEmpty()) {
+ 	        Alert alert = new Alert(Alert.AlertType.ERROR, "The song list is empty. Please add songs before deleting.", ButtonType.OK);
+ 	        alert.showAndWait();
+ 	        return;
+ 	    }
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Song Deletion Alert");
         alert.setContentText("Do you want to delete this song?");
